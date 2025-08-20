@@ -3976,8 +3976,13 @@ client.set_event_callback('paint', function()
         get_closest_enemy()
         render_screen_bar()
     end
-
-    renderer.text(center[1], screen[2] - 20, 255, 255, 255, 225,  "cd", 0, "Asaka ~ lopgy")
+    local user = {} do
+        local local_player = entity.get_local_player() 
+        user.name = entity.get_player_name(local_player) 
+        user.version = "Asaka ~ " .. user.name
+    end
+    
+    renderer.text(center[1], screen[2] - 20, 255, 255, 255, 225,  "cd", 0, user.version)
 end)
 
 lua_items.visuals.custom_scope:set_callback(function(self)
@@ -4530,3 +4535,4 @@ if not success then
     print("Can't connect to server. Cloud configs and online users will not work", result)
 
 end
+
