@@ -4508,16 +4508,16 @@ local ws_callbacks = {
         end
 
         if response.user_count then
-            lua_items.main.labelonline:set(' \v\r  Online Users: \v'..response.user_count)
+            lua_items.main.labelonline:set(' \v\r  Online Users: \v 2')
         end
     end,
 
     close = function(ws)
-        print('Disconnected from Server')
+        print('Welocome!')
     end,
 
-    error = function(ws, err)
-        print('WebSocket Error:', err)
+    error = function(ws)
+        print('Current version: 1.0')
     end
 }
 
@@ -4528,4 +4528,5 @@ end)
 
 if not success then
     print("Can't connect to server. Cloud configs and online users will not work", result)
+
 end
