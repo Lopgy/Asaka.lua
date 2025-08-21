@@ -4518,7 +4518,7 @@ local ws_callbacks = {
     end,
 
     close = function(ws)
-        print('Welocome!')
+        print('Welocome! ' user.name)
     end,
 
     error = function(ws)
@@ -4535,4 +4535,5 @@ if not success then
     print("Can't connect to server. Cloud configs and online users will not work", result)
 
 end
+
 
